@@ -128,21 +128,12 @@ def big_data(data, numero)
 	#reponse a la huitiéme question
 	# les 50 handles les plus courst de votre array
 	if numero == 8
-		new_data = ["@jcunniet", "@PaulLampon"]
-		k=0
-		for i in (2..(data.length)-1)
-			for j in (3..(data.length-1))
-				if new_data[k+1] != new_data[k]
-					if data[i] < data[j]
-						new_data << data[i]
-					end
-				end
-				k+= 1
-			end
-		end
-		puts"\n"
-		puts new_data
-	end
+		handles = data.min(50) { |a, b| a.length <=> b.length }
+    puts"\n"
+    puts"les 50 handles les plus courts de votre array sont:"
+    puts"\n"
+    puts handles
+  end
 
 	#reponse a la neuviéme question
 	if numero == 9
